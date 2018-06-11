@@ -1,0 +1,13 @@
+# Kingman Network Manager Hosts File
+# Append into /etc/hosts (MacOSX/Linux) or C:\Windows\System32\drivers\etc\hosts (Windows 10)
+# Computer will resolve listed names to their corresponding ips
+
+192.168.88.1	router.kingman
+192.168.88.218	toadserver.kingman
+192.168.88.208	studyroom.kingman
+192.168.88.218	toadserver.kingman
+192.168.88.229	mediaserver.kingman
+192.168.88.238	diningroom.kingman
+10.20.35.212	antenna.kingman
+192.168.88.215	edgeswitch.kingman
+192.168.88.129	mainprinter.kingman
