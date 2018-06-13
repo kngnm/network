@@ -36,22 +36,27 @@ It is a [Unifi Edgeswitch 24 Lite](https://dl.ubnt.com/datasheets/edgemax/EdgeSw
 
 __Unmanaged Switches__
 
-- [HP V1910-48G](http://www.fiberopticshare.com/hp-v1910-48g-je009a-switch-solution.html) - Net Closet; Gigabit
-- HP 190-8g? - Study Room; ?
-- Netgear ? - Dinig Room; ?
+| Make and Model | Location | Speed |
+|----------------|----------|-------|
+| [HP V1910-48G](http://www.fiberopticshare.com/hp-v1910-48g-je009a-switch-solution.html) | Net Closet | Gigabit |
+| HP 190-8g? | Study Room | ? |
+| Netgear ? | Dinig Room | ? |
 
 ## Wireless Access Points
 
 __Unifi (x6)__
 
-- Basement - DHCP; auto
-- Dining Room - DHCP; auto
-- Study Room - DHCP; auto
-- 2nd Floor - DHCP; auto
-- 3rd Floor Roof Stairs - DHCP; auto
-- 3rd Floor Bathroom - DHCP; auto
+| Room        | Location        | IP   | Channel |  
+|-------------|-----------------|------|------|
+| Basement    | Hallway         | DHCP | auto |
+| Dining Room | Top of Cabinets | DHCP | auto |
+| Study Room  | Box on the Floor| DHCP | auto |
+| 2nd Floor   | Hallway         | DHCP | auto |
+| 3rd Floor   | Roof Stairs     | DHCP | auto |
+| 3rd Floor   | Outside Bathroom| DHCP | auto |
 
-They are [Unifi UAP-AC-PRO](https://dl.ubnt.com/datasheets/unifi/UniFi_AC_APs_DS.pdf)
+They are [Unifi UAP-AC-PRO](https://dl.ubnt.com/datasheets/unifi/UniFi_AC_APs_DS.pdf)  
+House Unifi Controller: https://192.168.88.218:8080
 
 ## Servers & House Computers
 
