@@ -1,5 +1,9 @@
 # Kingman Network Quick Reference
 
+## Layout Diagram
+
+![Network Layout](https://raw.githubusercontent.com/kngnm/network/master/layout.png)
+
 ## Internet Uplink
 
 Cloyne-Kingman Antenna:
@@ -105,3 +109,12 @@ __Dining Room Computer__
     Location: Dining Room
 
 It is a custom built computer
+
+## Printers
+
+| Callsign | Make and Model | Wireless? | Color? | Double-Sided? | Scanning? |
+|----------|----------------|-----------|--------|---------------|-----------|
+| KNG-BackupPrinter | [Brother HL2240](http://download.brother.com/welcome/doc002837/cv_hl2240d_usaeng_usr_c.pdf) | No | No | No | No|
+| KNG-MainPrinter | [HP Photosmart c3180](http://www.hp.com/ctg/Manual/c00694908.pdf) | No | Yes | No | Yes |
+| KNG-OldFrosty | [HP LaserJet Pro P1102w](http://h10032.www1.hp.com/ctg/Manual/c04697535) | Yes | No | No | No |
+| KNG-DoubleSided | [Brother MFC9340](http://download.brother.com/welcome/doc003075/cv_mfc9130cw_use_ausr.pdf) | Yes | Yes | Yes | Yes |
