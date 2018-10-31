@@ -11,32 +11,33 @@ Cloyne-Kingman Antenna:
 	IP: 10.20.35.212 (Static)
 	Location: fire-escape outside the third floor nook
     Webconfig Port: 80
-    
+
 It is a [Ubiquiti Powerbeam m5 300](https://dl.ubnt.com/datasheets/powerbeam/PowerBeam_DS.pdf)  
 See [Cloyne's Network Reference](https://github.com/cloyne/network/) for more information.
+Also see the [BSC Mesh Specification](https://github.com/bsc-networks/mesh).
 
 ## Routers
 
 __Main Router__:
 
     External IP: 10.20.33.44 (Static DHCP)
-    Internal IP: 192.168.88.1
-    Netmask: 255.255.255.0 (/24)
-    DHCP Client Range: 192.168.88.0/24
+    Internal IP: 10.20.96.1
+    Netmask: 255.255.255.0 (/22)
+    DHCP Client Range: 10.20.96.10-10.20.96.250
     Webconfig Port: 80
     Location: Network Closet
-    
+
 It is a [	Mikrotik RB2011UiAS-RM](https://mikrotik.com/product/RB2011UiAS-RM)
 
 ## Switches
 
 __Edge Switch__
 
-	IP: 192.168.88.215 (Static DHCP)
+	IP: ??? (Static DHCP)
     Web Interface Port: 80
     Speed: Gigabit
     Location: Network Closet
-    
+
 It is a [Unifi Edgeswitch 24 Lite](https://dl.ubnt.com/datasheets/edgemax/EdgeSwitch_Lite_DS.pdf)
 
 __Unmanaged Switches__
@@ -55,7 +56,7 @@ __Unifi (x6)__
 |-------------|-----------------|------|------|
 | Basement    | Hallway         | DHCP | auto |
 | Dining Room | Top of Cabinets | DHCP | auto |
-| Study Room  | Box on the Floor| DHCP | auto |
+| Study Room  | By Toner and Ink| DHCP | auto |
 | 2nd Floor   | Hallway         | DHCP | auto |
 | 3rd Floor   | Roof Stairs     | DHCP | auto |
 | 3rd Floor   | Outside Bathroom| DHCP | auto |
@@ -67,7 +68,7 @@ House Unifi Controller: https://192.168.88.218:8080
 
 __Toadserver__:
 
-	IP: 192.168.88.218 (Static DHCP)
+	IP: 10.20.96.49 (Static DHCP)
     Operating System: Lubuntu 16.04
     Services:
     	CUPS Printserver: 631
@@ -77,13 +78,13 @@ __Toadserver__:
  It is a Compaq Presario 061  
  [Cups Print Server Documentation](https://help.ubuntu.com/lts/serverguide/cups.html.en)  
  [Unifi Controller User Manual](https://dl.ubnt.com/guides/UniFi/UniFi_Controller_V5_UG.pdf)
- 
+
  __Media Server__:
- 
- 	IP: 192.168.88.229 (Static DHCP)
+
+ 	IP: Currently Off
     Operating System: Ubuntu 16.04
     Services:
-    	Apache2 Web Server: 80
+        Apache2 Web Server: 80
         Webmin: 10000
         SSH: 22
     Location: Network Closet
@@ -93,14 +94,14 @@ It is a custom built computer
 
 __Study Room Computer__:
 
-	IP: 192.168.88.208 (Static DHCP)
+	IP: 10.20.96.32 (Static DHCP)
     Operating System: Windows 10 Professional
     Services:
     	LPR Spooler
         Windows Printer Sharing
     Location: Study Room
-    
-It is a ?
+
+It is a custom built computer
 
 __Dining Room Computer__
 
