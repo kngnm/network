@@ -86,6 +86,7 @@ __Toadserver__:
     Services:
         Apache2 Web Server: 80
         Webmin: 10000
+				Rocket.Chat Server: 3000
         SSH: 22
     Location: Network Closet
 
@@ -105,7 +106,7 @@ It is a custom built computer
 
 __Dining Room Computer__
 
-	IP: 192.168.88.238 (Static DHCP)
+	IP: 10.20.96.35 (Static DHCP)
     Operating System: Ubuntu 18.04
     Services: Spotify Premium
     Location: Dining Room

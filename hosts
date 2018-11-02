@@ -5,8 +5,8 @@
 10.20.96.1	     router.kingman
 10.20.96.49    	 toadserver.kingman
 10.20.96.32	     kngstudyroom.kingman
-# 192.168.88.229 mediaserver.kingman
+10.20.96.52      mediaserver.kingman
 10.20.96.35      diningroom.kingman
 10.20.35.212	   antenna.kingman
 # 192.168.88.215 edgeswitch.kingman
-192.168.88.129	 mainprinter.kingman
+10.20.96.37	     mainprinter.kingman
