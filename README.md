@@ -24,7 +24,7 @@ __Main Router__:
     Internal IP: 10.20.96.1
     Netmask: 255.255.255.0 (/22)
     DHCP Client Range: 10.20.96.10-10.20.96.250
-    Webconfig Port: 80
+    Webconfig Port: 443 (https)
     Location: Network Closet
 
 It is a [	Mikrotik RB2011UiAS-RM](https://mikrotik.com/product/RB2011UiAS-RM)
@@ -33,7 +33,7 @@ It is a [	Mikrotik RB2011UiAS-RM](https://mikrotik.com/product/RB2011UiAS-RM)
 
 __Edge Switch__
 
-	IP: ??? (Static DHCP)
+    IP: ??? (Static DHCP)
     Web Interface Port: 80
     Speed: Gigabit
     Location: Network Closet
@@ -68,10 +68,10 @@ House Unifi Controller: https://192.168.88.218:8080
 
 __Toadserver__:
 
-	IP: 10.20.96.49 (Static DHCP)
+    IP: 10.20.96.49 (Static DHCP)
     Operating System: Lubuntu 16.04
     Services:
-    	CUPS Printserver: 631
+        CUPS Printserver: 631
         Unifi Controller: 8080
         SSH: 22
     Location: Network Closet
@@ -81,12 +81,12 @@ __Toadserver__:
 
  __Media Server__:
 
- 	IP: Currently Off
+    IP: 10.20.96.52 (Static DHCP)
     Operating System: Ubuntu 16.04
     Services:
         Apache2 Web Server: 80
         Webmin: 10000
-				Rocket.Chat Server: 3000
+        Rocket.Chat Server: 3000
         SSH: 22
     Location: Network Closet
 
@@ -95,10 +95,10 @@ It is a custom built computer
 
 __Study Room Computer__:
 
-	IP: 10.20.96.32 (Static DHCP)
+    IP: 10.20.96.32 (Static DHCP)
     Operating System: Windows 10 Professional
     Services:
-    	LPR Spooler
+        LPR Spooler
         Windows Printer Sharing
     Location: Study Room
 
@@ -106,7 +106,7 @@ It is a custom built computer
 
 __Dining Room Computer__
 
-	IP: 10.20.96.35 (Static DHCP)
+    IP: 10.20.96.35 (Static DHCP)
     Operating System: Ubuntu 18.04
     Services: Spotify Premium
     Location: Dining Room
