@@ -1,0 +1,46 @@
+#!/bin/bash
+
+apt update
+apt install -y tzdata
+
+# Dependency for apt-key
+apt install -y gnupg
+
+# Add Mongo DB apt repo
+apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5
+echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-3.6.list
+
+# Reinstall Certificates (https://askubuntu.com/questions/420860/problem-with-certificates)
+apt-get install -y --reinstall --no-install-recommends ca-certificates
+
+# Configure Node JS
+apt-get update
+apt-get install -y --no-install-recommends curl
+curl -sL curl -sL https://deb.nodesource.com/setup_8.x | bash -
+
+# Install Dependencies
+apt-get install -y --no-install-recommends build-essential
+apt-get install -y --no-install-recommends mongodb-org
+apt-get install -y --no-install-recommends nodejs
+apt-get install -y --no-install-recommends graphicsmagick
+npm install -g inherits n; n 8.11.3
+
+# Download RocketChat
+curl -L https://releases.rocket.chat/latest/download -o /tmp/rocket.chat.tgz
+tar -xzf /tmp/rocket.chat.tgz -C /tmp
+
+# Install RocketChat
+bash -c 'cd /tmp/bundle/programs/server; npm install'
+mv /tmp/bundle /opt/Rocket.Chat
+
+# Configure RocketChat
+useradd -M rocketchat; usermod -L rocketchat
+chown -R rocketchat:rocketchat /opt/Rocket.Chat
+echo -e "[Unit]\nDescription=The Rocket.Chat server\nAfter=network.target remote-fs.target nss-lookup.target nginx.target mongod.target\n[Service]\nExecStart=/usr/local/bin/node /opt/Rocket.Chat/main.js\nStandardOutput=syslog\nStandardError=syslog\nSyslogIdentifier=rocketchat\nUser=rocketchat\nEnvironment=MONGO_URL=mongodb://localhost:27017/rocketchat ROOT_URL=http://your-host-name.com-as-accessed-from-internet:3000/ PORT=3000\n[Install]\nWantedBy=multi-user.target" | tee /lib/systemd/system/rocketchat.service
+
+# Create Start Script (because we can't use systemd in docker) to be run on launch
+echo "#!/bin/bash\n\nmongod --config /etc/mongod.conf &\nsleep 2\n\nexport MONGO_URL=mongodb://localhost:27017/rocketchat\nexport ROOT_URL=$1\nexport PORT=$2\n/usr/local/bin/node /opt/Rocket.Chat/main.js" > /bin/launch
+chmod a+x /bin/launch
+
+# remove apt lists to reduce image size
+rm -rf /var/lib/apt/lists/*
