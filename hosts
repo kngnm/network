@@ -3,10 +3,16 @@
 # Computer will resolve listed names to their corresponding ips
 
 10.20.96.1	     router.kingman
-10.20.96.49    	 toadserver.kingman
-10.20.96.32	     kngstudyroom.kingman
-10.20.96.52      mediaserver.kingman
-10.20.96.35      diningroom.kingman
+10.20.96.2    	 toadserver.kingman
+10.20.96.3       mediaserver.kingman
+10.20.96.4	     kngstudyroom.kingman
+10.20.96.5       kngdiningroom.kingman
+10.20.96.6       diningroomap.kingman
+10.20.96.7       studyroomap.kingman
+10.20.96.8       2ndfloorap.kingman
+10.20.96.9       3rdfloorroofstairsap.kingman
+10.20.96.10      basementap.kingman
+10.20.96.11      3rdfloorbathroomap.kingman
+10.20.96.12	     mainprinter.kingman
 10.20.35.212	   antenna.kingman
 # 192.168.88.215 edgeswitch.kingman
-10.20.96.37	     mainprinter.kingman

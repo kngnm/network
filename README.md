@@ -22,8 +22,8 @@ __Main Router__:
 
     External IP: 10.20.33.44 (Static DHCP)
     Internal IP: 10.20.96.1
-    Netmask: 255.255.255.0 (/22)
-    DHCP Client Range: 10.20.96.10-10.20.96.250
+    Netmask: 255.255.255.0 (/24)
+    DHCP Client Range: 10.20.96.20-10.20.96.250
     Webconfig Port: 443 (https)
     Location: Network Closet
 
@@ -68,7 +68,7 @@ House Unifi Controller: https://192.168.88.218:8080
 
 __Toadserver__:
 
-    IP: 10.20.96.49 (Static DHCP)
+    IP: 10.20.96.2 (Static DHCP)
     Operating System: Lubuntu 16.04
     Services:
         CUPS Printserver: 631
@@ -81,7 +81,7 @@ __Toadserver__:
 
  __Media Server__:
 
-    IP: 10.20.96.52 (Static DHCP)
+    IP: 10.20.96.3 (Static DHCP)
     Operating System: Ubuntu 16.04
     Services:
         Apache2 Web Server: 80
@@ -95,7 +95,7 @@ It is a custom built computer
 
 __Study Room Computer__:
 
-    IP: 10.20.96.32 (Static DHCP)
+    IP: 10.20.96.4 (Static DHCP)
     Operating System: Windows 10 Professional
     Services:
         LPR Spooler
@@ -106,7 +106,7 @@ It is a custom built computer
 
 __Dining Room Computer__
 
-    IP: 10.20.96.35 (Static DHCP)
+    IP: 10.20.96.6 (Static DHCP)
     Operating System: Ubuntu 18.04
     Services: Spotify Premium
     Location: Dining Room
