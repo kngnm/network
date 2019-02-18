@@ -1,0 +1,6 @@
+version: '2'
+services:
+  reverseproxy:
+    image: arm32v7/nginx
+    ports:
+      - "80:80"

@@ -1,0 +1,35 @@
+version: '2'
+services:
+
+  unifi:
+    image: jacobalberty/unifi
+    network_mode: host
+    ports:
+      - "3478:3478/udp"
+      - "10001:10001/udp"
+      - "8080:8080"
+      - "8081:8081"
+      - "8443:8443"
+      - "8843:8843"
+      - "8880:8880"
+      - "6789:6789"
+    environment:
+      - "PUID: 116"  # uid outputted by `id unifi`
+      - "PGID: 129"  # gid "   "      "
+    volumes:
+      - /usr/lib/unifi2:/unifi
+
+  web:
+    image: httpd
+    ports:
+      - "80:80"
+    volumes:
+      - /var/www/http:/usr/local/apache2/htdocs/
+
+  cups-printserver:
+    image: kngnm/cups
+    network_mode: host
+    ports:
+      - "631:631"
+    volumes:
+      - /etc/cups:/etc/cups

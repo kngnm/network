@@ -1,0 +1,46 @@
+version: '2'
+services:
+
+  mongodb:
+    image: mongo
+    ports:
+      - "8081:27017"
+    restart: always
+    volumes:
+      - /var/lib/mongodb:/data/db
+
+  rocketchat:
+    image: rocket.chat
+    ports:
+      - "3000:3000"
+    depends_on:
+      - "mongodb"
+    environment:
+      MONGO_URL: mongodb://172.17.0.1:8081
+
+  rocketchat-tunnel:
+    image: kngnm/ssh-tunnel
+    network_mode: host
+    environment:
+      - "LOCAL_PORT: 3000"
+      - "REMOTE_PORT: 3000"
+      - "REMOTE_HOST: kingmanhall.org"
+      - "USERNAME: kngnm"
+    volumes:
+      - "~/.ssh:/home/root/.ssh"
+
+  mediaserver:
+    image: httpd
+    ports:
+      - "80:80"
+    volumes:
+      - ~/sda/home/louise/torrents:/usr/local/apache2/htdocs/
+
+  minecraft:
+    image: itzg/minecraft-server
+    ports:
+      - "25565:25565"
+    environment:
+      - "EULA: TRUE"
+    volumes:
+      - ~/minecraft:/data
