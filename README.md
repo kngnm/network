@@ -2,7 +2,7 @@
 
 ## Layout Diagram
 
-![Network Layout](https://raw.githubusercontent.com/kngnm/network/master/layout.png)
+![Network Layout](https://raw.githubusercontent.com/kngnm/network/master/documentation/diagrams/layout.png)
 
 ## Internet Uplink
 
@@ -15,6 +15,7 @@ Cloyne-Kingman Antenna:
 It is a [Ubiquiti Powerbeam m5 300](https://dl.ubnt.com/datasheets/powerbeam/PowerBeam_DS.pdf)  
 See [Cloyne's Network Reference](https://github.com/cloyne/network/) for more information.
 Also see the [BSC Mesh Specification](https://github.com/bsc-networks/mesh).
+For information regarding hosting web services, see the [Hosting Guide](https://raw.githubusercontent.com/kngnm/network/master/documentation/hosting.md)
 
 ## Routers
 
@@ -120,7 +121,7 @@ __Kingman Reverse Proxy__
     Operting System: HypriotOS
     Services: Nginx Reverse Proxy
     Location: Cloyne Server Room
-    
+
 It is a [Raspberry Pi 1 B+](https://raspberry-projects.com/pi/pi-hardware/raspberry-pi-model-b-plus/model-b-hardware-general-specifications)  
 [HypriotOS Site](https://blog.hypriot.com/)
 [Nginx Documentation](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/)
