@@ -113,6 +113,18 @@ __Dining Room Computer__
 
 It is a custom built computer
 
+__Kingman Reverse Proxy__
+
+    IP: 64.62.133.46 (static)
+    Fully Qualified Domain Name: kingmanhall.org
+    Operting System: HypriotOS
+    Services: Nginx Reverse Proxy
+    Location: Cloyne Server Room
+    
+It is a [Raspberry Pi 1 B+](https://raspberry-projects.com/pi/pi-hardware/raspberry-pi-model-b-plus/model-b-hardware-general-specifications)  
+[HypriotOS Site](https://blog.hypriot.com/)
+[Nginx Documentation](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/)
+
 ## Printers
 
 | Callsign | Make and Model | Wireless? | Color? | Double-Sided? | Scanning? |
