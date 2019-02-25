@@ -7,11 +7,17 @@ IP Address
 ```
 Public Static IP Address: 64.62.133.46
 Fully Qualified Domain Name (FQDN): kingmanhall.org
+SSL Certificate Authority: Let's Encrypt
 ```
 
 Notes:
 - The ip address is from Cloyne's pool of static ips from hurricane electric.  Contact the Cloyne network manager for more specific information.  
-- The domain name is owned by Ping (zestyping@gmail.com), a former kingman network manager.  Contact him if you need to move it to a new ip address.  
+- The domain name is owned by Ping (zestyping@gmail.com), a former kingman network manager.  Contact him if you need to move it to a new ip address.
+- The SSL certificate is provided by [Let's Encrypt CA](https://letsencrypt.org/getting-started/).  To set up the certificate on a new host, download [Certbot](https://certbot.eff.org/lets-encrypt/debianother-nginx) and follow their instructions.  To manually renew the certificate on the current setup, ssh into kingmanhall.org and run `sudo ./certbot-auto renew`.  Ideally, this should be preformed by the following cron job on the host machine:
+
+```
+0 12 * * * sudo /home/kngnm/certbot-auto renew
+```
 
 Layout Diagram
 --------------
@@ -39,22 +45,26 @@ Configuring a New Service to be Hosted
 4. Configure the reverse proxy.  First, login to `kingman-reverse-proxy` via ssh.  Then edit /etc/nginx/sites-enabled/default (this can be done via terminal with the command `sudo nano /etc/nginx/sites-enabled/default`).  The content of the file will look something like (but not exactly like) this:
 ```
 server {
-    listen 80;
-    location / {
-      proxy_pass http://localhost:3000;
-    }
+  listen 443 ssl;
+  ssl_certificate /etc/letsencrypt/live/kingmanhall.org/fullchain.pem;
+  ssl_certificate_key /etc/letsencrypt/live/kingmanhall.org/privkey.pem;
+  location / {
+    proxy_pass http://localhost:3000;
+  }
 }
 ```  
 Add another location block to the file in the following way.  Note that `port` should be a number not already present in a `proxy_pass` URL.
 ```
 server {
-    listen 80;
-    location / {
-      proxy_pass http://localhost:3000;
-    }
-    location /<service name here> {
-      proxy_pass http://localhost:<port>;
-    }
+  listen 443 ssl;
+  ssl_certificate /etc/letsencrypt/live/kingmanhall.org/fullchain.pem;
+  ssl_certificate_key /etc/letsencrypt/live/kingmanhall.org/privkey.pem;
+  location / {
+    proxy_pass http://localhost:3000;
+  }
+  location /<service name here> {
+    proxy_pass http://localhost:<port>;
+  }
 }
 ```
 5. Create a temporary ssh tunnel from the web server to `kingman-reverse-proxy` with the following command, where service port is the port the web server is bound on the local machine: `ssh -R <port>:localhost:<service port> kngnm@kingmanhall.org`.  At this point, you should be able to access your web service at kingmanhall.org/[service name here].
