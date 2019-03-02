@@ -82,3 +82,15 @@ server {
   volumes:
     - "~/.ssh:/home/root/.ssh"
 ```
+
+Firewall Configuration
+----------------------
+
+There will be some services on `kingman-reverse-proxy` that ideally should not be accessible to the outside world (ssh for example).  To deny access to these services to people outside of Kingman Hall, configure the local firewall on `kingman-reverse-proxy` to drop packets that do not originate from Cloyne's router.  This can be done using [iptables](https://www.booleanworld.com/depth-guide-iptables-linux-firewall/) with the following commands (replace <port> with the desired port number):
+```
+sudo apt-get install iptables-persistent
+sudo iptables -A INPUT -p tcp -s 64.62.133.42 --dport <port> -j ACCEPT
+sudo iptables -A INPUT -p tcp --dport <port> -j DROP
+iptables-save > /etc/iptables/rules.v4
+```
+Then log into a school computer and attempt to ssh into `kingmanhall.org`.  If the firewall is configured correctly, you will not receive a response.
