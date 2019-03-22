@@ -67,6 +67,8 @@ House Unifi Controller: https://192.168.88.218:8080
 
 ## Servers & House Computers
 
+See the [Docker Guide](https://github.com/kngnm/network/blob/master/documentation/docker.md) for instructions on server management.
+
 __Toadserver__:
 
     IP: 10.20.96.2 (Static DHCP)
