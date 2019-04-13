@@ -34,7 +34,7 @@ It is a [	Mikrotik RB2011UiAS-RM](https://mikrotik.com/product/RB2011UiAS-RM)
 
 __Edge Switch__
 
-    IP: ??? (Static DHCP)
+    IP: 10.20.96.13 (Static DHCP)
     Web Interface Port: 80
     Speed: Gigabit
     Location: Network Closet
