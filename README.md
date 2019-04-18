@@ -53,17 +53,17 @@ __Unmanaged Switches__
 
 __Unifi (x6)__
 
-| Room        | Location        | IP   | Channel |  
-|-------------|-----------------|------|------|
-| Basement    | Hallway         | DHCP | auto |
-| Dining Room | Top of Cabinets | DHCP | auto |
-| Study Room  | By Toner and Ink| DHCP | auto |
-| 2nd Floor   | Hallway         | DHCP | auto |
-| 3rd Floor   | Roof Stairs     | DHCP | auto |
-| 3rd Floor   | Outside Bathroom| DHCP | auto |
+| Room        | Location        | MAC Address | IP   | Channel |  
+|-------------|-----------------|-------------|------|---------|
+| Basement    | Hallway         | 80:2a:a8:c0:c7:4a |10.20.96.10 (Static DHCP) | 11 |
+| Dining Room | Top of Cabinets | 80:2a:a8:13:4b:bb |10.20.96.6 (Static DHCP) | 6 |
+| Study Room  | By Toner and Ink| 80:2a:a8:13:4b:ed |10.20.96.7 (Static DHCP) | 1 |
+| 2nd Floor   | Hallway         | 80:2a:a8:13:4b:c5 |10.20.96.8 (Static DHCP) | 11 |
+| 3rd Floor   | Roof Stairs     | 80:2a:a8:c0:c5:3e |10.20.96.11 (Static DHCP) | 6 |
+| 3rd Floor   | Outside Bathroom| 80:2a:a8:13:4a:19 |10.20.96.9 (Static DHCP) | 1 |
 
 They are [Unifi UAP-AC-PRO](https://dl.ubnt.com/datasheets/unifi/UniFi_AC_APs_DS.pdf)  
-House Unifi Controller: https://192.168.88.218:8080
+House Unifi Controller: https://toadserver.kingman:8080
 
 ## Servers & House Computers
 
@@ -109,7 +109,7 @@ It is a custom built computer
 
 __Dining Room Computer__
 
-    IP: 10.20.96.6 (Static DHCP)
+    IP: 10.20.96.5 (Static DHCP)
     Operating System: Ubuntu 18.04
     Services: Spotify Premium
     Location: Dining Room
