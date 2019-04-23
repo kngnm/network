@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# A script for printing test pages from ubuntu 18.04 (as you can no longer do this from printer settings)
+# Usage bash testpage <PrinterName>
+# Where <PrinterName> is the name of the printer on the CUPS printserver minus the KNG-
+# For example, `testpage BackupPrinter` would print a test page to KNG-BackupPrinter
+# TODO: make this script usable for mac users as well, and write a windows equivalent
+
+lpr -P "KNG_$1_toadserver_kingman" "/usr/share/cups/data/testprint"
