@@ -6,13 +6,21 @@
 
 ## Internet Uplink
 
-Cloyne-Kingman Antenna:
+Kingman-Cloyne Antenna:
 
 	IP: 10.20.35.212 (Static)
 	Location: fire-escape outside the third floor nook
-    Webconfig Port: 80
+    Webconfig: Port 80
+    SSH: Port 22
+    
+Cloyne-Kingman Antenna:
 
-It is a [Ubiquiti Powerbeam m5 300](https://dl.ubnt.com/datasheets/powerbeam/PowerBeam_DS.pdf)  
+	IP: 10.20.35.210 (Static)
+	Location: East Wing of Cloyne
+	Webconfig Port: 80
+	SSH: Port 22
+
+They are [Ubiquiti Powerbeam m5 300](https://dl.ubnt.com/datasheets/powerbeam/PowerBeam_DS.pdf)  
 See [Cloyne's Network Reference](https://github.com/cloyne/network/) for more information.
 Also see the [BSC Mesh Specification](https://github.com/bsc-networks/mesh).  
 For information regarding hosting web services, see the [Hosting Guide](https://github.com/kngnm/network/blob/master/documentation/hosting.md)
@@ -25,7 +33,7 @@ __Main Router__:
     Internal IP: 10.20.96.1
     Netmask: 255.255.255.0 (/24)
     DHCP Client Range: 10.20.96.20-10.20.96.250
-    Webconfig Port: 443 (https)
+    Webconfig Port: 80 (http)
     Location: Network Closet
 
 It is a [	Mikrotik RB2011UiAS-RM](https://mikrotik.com/product/RB2011UiAS-RM)
@@ -34,12 +42,12 @@ It is a [	Mikrotik RB2011UiAS-RM](https://mikrotik.com/product/RB2011UiAS-RM)
 
 __Edge Switch__
 
-    IP: 10.20.96.13 (Static DHCP)
+    IP: 10.20.96.19 (Static)
     Web Interface Port: 80
     Speed: Gigabit
     Location: Network Closet
 
-It is a [Unifi Edgeswitch 24 Lite](https://dl.ubnt.com/datasheets/edgemax/EdgeSwitch_Lite_DS.pdf)
+It is an [Edgemax Edgeswitch 24 Lite](https://dl.ubnt.com/datasheets/edgemax/EdgeSwitch_Lite_DS.pdf)
 
 __Unmanaged Switches__
 
@@ -76,6 +84,7 @@ __Toadserver__:
     Services:
         CUPS Printserver: 631
         Unifi Controller: 8080
+	Samba
         SSH: 22
     Location: Network Closet
  It is a Compaq Presario 061  
@@ -90,6 +99,7 @@ __Toadserver__:
         Apache2 Web Server: 80
         Webmin: 10000
         Rocket.Chat Server: 3000
+	Grafana: 9000
         SSH: 22
     Location: Network Closet
 
@@ -119,7 +129,7 @@ It is a custom built computer
 __Kingman Reverse Proxy__
 
     IP: 64.62.133.46 (static)
-    Fully Qualified Domain Name: kingmanhall.org
+    Fully Qualified Domain Name: kingman-hall.org
     Operting System: HypriotOS
     Services: Nginx Reverse Proxy
     Location: Cloyne Server Room
